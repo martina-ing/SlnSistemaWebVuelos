@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -72,9 +73,9 @@ namespace SistemaWebVuelos.Controllers
 
         [HttpPost]
         [ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(Vuelo vue)
         {
-            Vuelo vuelo= context.Vuelos.Find(id);
+            var vuelo= context.Vuelos.Find(vue.Id);
             if (vuelo == null)
                 return HttpNotFound();
 
@@ -100,6 +101,29 @@ namespace SistemaWebVuelos.Controllers
         }
 
 
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            Vuelo vuelo = context.Vuelos.Find(id);
+            if (vuelo == null)
+                return HttpNotFound();
+
+            return View("Edit", vuelo);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Vuelo vuelo)
+        {
+            var vue = context.Vuelos.Find(vuelo.Id);
+            if (vue != null)
+            {
+                context.Entry(vue).State = EntityState.Detached;
+                context.Entry(vuelo).State = EntityState.Modified;
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View("Edit", vuelo);
+        }
 
 
 
