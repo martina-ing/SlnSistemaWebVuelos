@@ -1,0 +1,73 @@
+﻿@model SistemaWebVuelos.Models.Vuelo
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+    <link href="~/Content/Main.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset>
+        <legend>
+
+            Vuelos Detail
+
+        </legend>
+        <div class="display-label">
+
+            @Html.DisplayNameFor(model => model.Fecha)
+
+        </div>
+        <div class="display-text">
+
+            @Html.DisplayFor(model => model.Fecha)
+
+        </div>
+
+
+        <div class="display-label">
+
+            @Html.DisplayNameFor(model => model.Destino)
+
+        </div>
+        <div class="display-text">
+
+            @Html.DisplayFor(model => model.Destino)
+
+        </div>
+
+
+        <div class="display-label">
+
+            @Html.DisplayNameFor(model => model.Origen)
+
+        </div>
+        <div class="display-text">
+
+            @Html.DisplayFor(model => model.Origen)
+
+        </div>
+
+        <div class="display-label">
+
+            @Html.DisplayNameFor(model => model.Matricula)
+
+        </div>
+        <div class="display-text">
+
+            @Html.DisplayFor(model => model.Matricula)
+
+        </div>
+
+
+    </fieldset>
+
+    <p>
+
+        @Html.ActionLink("Volver a Index", "Index", "Vuelo")
+
+    </p>
+
+</body>
+</html>

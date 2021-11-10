@@ -1,0 +1,44 @@
+﻿@model IEnumerable<SistemaWebVuelos.Models.Vuelo>
+
+
+@using (Html.BeginForm("BuscarPorDestino", "Vuelo", FormMethod.Get))
+{
+    <h3>BUscar por Destino:</h3>
+    @Html.TextBox("Destino", null)
+    <input type="submit" value="Buscar" />
+}
+<p id="Create">@Html.ActionLink("Create New", "Create", "Vuelo")</p>
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Fecha)</th>
+        <th>@Html.DisplayNameFor(model => model.Destino)</th>
+        <th>@Html.DisplayNameFor(model => model.Origen)</th>
+        <th>@Html.DisplayNameFor(model => model.Matricula)</th>
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
+            <td>@Html.DisplayFor(modelItem => item.Destino)</td>
+            <td>@Html.DisplayFor(modelItem => item.Origen)</td>
+            <td>@Html.DisplayFor(modelItem => item.Matricula)</td>
+
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+
+            <td>
+                @Html.ActionLink("Detail", "Detail", new { id = item.Id })
+            </td>
+
+        </tr>
+    }
+</table>
+
+@section SideBarIzquierda
+{
+    <h3>Seccion Opcional</h3>
+}
+

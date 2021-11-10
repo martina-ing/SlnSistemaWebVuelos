@@ -1,0 +1,44 @@
+﻿body {
+}
+
+#header {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align:center;
+    font-size: 30px;
+}
+
+#menu {
+    background-color: mediumslateblue;
+    height: 40px;
+    list-style: none;
+    color: white;  
+        text-align: center;
+        text-decoration: none; 
+        font-size:30px;
+  }
+
+main {
+    display:flex;
+    flex-direction:row;
+}
+#sidebar {
+    background-color: black;
+    height:600px;
+    color: white;    
+    width:25%;
+}
+
+#content {
+    color: black;
+    width: 75%;
+}
+
+#footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    height:40px;
+    
+}

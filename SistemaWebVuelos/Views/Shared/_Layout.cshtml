@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Main.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="header">
+        <h1>Sistema Vuelos</h1>
+    </div>
+    <div id="menu">
+        @Html.ActionLink("Home", "Index", "Home")
+        @Html.ActionLink("Vuelos", "Index", "Vuelo")
+        
+    </div>
+    <main>
+        <div id="sidebar">
+
+            @if (IsSectionDefined("SideBarIzquierda"))
+            {
+                @RenderSection("SideBarIzquierda")
+            }
+            else
+            {
+                <h2>Zona Editable Opc</h2>
+            }
+
+        </div>
+
+
+        <div id="content">
+            @RenderBody()
+        </div>
+
+
+    </main>
+   
+
+
+    <div id="footer">
+        <p>info@Vuelo.com</p>
+    </div>
+
+</body>
+</html>
