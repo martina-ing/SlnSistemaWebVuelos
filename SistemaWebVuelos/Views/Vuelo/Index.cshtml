@@ -1,51 +1,65 @@
 ﻿@model IEnumerable<SistemaWebVuelos.Models.Vuelo>
 <link href="~/Content/Main.css" rel="stylesheet" />
 
-@using (Html.BeginForm("BuscarPorDestino", "Vuelo", FormMethod.Get))
-{
-    <h3>Buscar por Destino:</h3>
-    @Html.TextBox("Destino", null)
-    <input type="submit" value="Buscar" />
-}
 <p id="Create">@Html.ActionLink("Create New", "Create", "Vuelo")</p>
-<table>
-    <tr>
-        <th>@Html.DisplayNameFor(model => model.Fecha)</th>
-        <th>@Html.DisplayNameFor(model => model.Destino)</th>
-        <th>@Html.DisplayNameFor(model => model.Origen)</th>
-        <th>@Html.DisplayNameFor(model => model.Matricula)</th>
 
 
-    </tr>
-    @foreach (var item in Model)
+<div class="encabezado">
+    @using (Html.BeginForm("BuscarPorDestino", "Vuelo", FormMethod.Get))
     {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
-            <td>@Html.DisplayFor(modelItem => item.Destino)</td>
-            <td>@Html.DisplayFor(modelItem => item.Origen)</td>
-            <td>@Html.DisplayFor(modelItem => item.Matricula)</td>
-
-            <td>
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-
-            <td>
-                @Html.ActionLink("Detail", "Detail", new { id = item.Id })
-            </td>
-
-             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id })
-            </td>
-
-        </tr>
+        <h3>Buscar por Destino:</h3>
+        @Html.TextBox("Destino", null)
+        <input type="submit" value="Buscar" />
     }
-</table>
+</div>
+    <div class="tabla">
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Fecha)</th>
+                <th>@Html.DisplayNameFor(model => model.Destino)</th>
+                <th>@Html.DisplayNameFor(model => model.Origen)</th>
+                <th>@Html.DisplayNameFor(model => model.Matricula)</th>
 
-@section SideBarIzquierda
+
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Destino)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Origen)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Matricula)</td>
+
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Detail", "Detail", new { id = item.Id })
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                    </td>
+
+                </tr>
+            }
+
+
+        </table>
+    </div>
+
+
+
+    <div id="home">
+        @Html.ActionLink("HOME", "Index", "Home")
+    </div>
+
+    @section SideBarIzquierda
 {
-    <h2>Aviones</h2>
-    <img src="~/Images/index1.jpg" />
-    <img src="~/Images/interior.jpg" />
+        <h2>Aviones</h2>
+        <img src="~/Images/index1.jpg" />
+        <img src="~/Images/interior.jpg" />
 
-}
+    }
 
