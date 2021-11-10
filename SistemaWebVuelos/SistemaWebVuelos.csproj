@@ -96,6 +96,7 @@
   <ItemGroup>
     <Content Include="Content\Main.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\aviones.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,9 @@
     ViewBag.Title = "Home Index";
 }
 <link href="~/Content/Main.css" rel="stylesheet" />
-<h1>Bienvenidos al sitio Web!!</h1>
-<h3>Fecha: </h3><p>@ViewBag.Fecha</p>
+<div id="homeindex">
+    <h1>Bienvenidos al sitio Web!!</h1>
+    <p><b>Fecha: </b>@ViewBag.Fecha</p>
 
-<h5>@Html.ActionLink("Ir a Vuelos", "Index", "Vuelo")</h5>
+    <h5>@Html.ActionLink("Ir a Vuelos", "Index", "Vuelo")</h5>
+</div>

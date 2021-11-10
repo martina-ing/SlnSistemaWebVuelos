@@ -1,5 +1,5 @@
 ﻿@model SistemaWebVuelos.Models.Vuelo
-
+<link href="~/Content/Main.css" rel="stylesheet" />
 
     <h2>
 
@@ -15,60 +15,49 @@
     @using (Html.BeginForm("Delete", "Vuelo", FormMethod.Post))
      {
         @Html.HiddenFor(model => model.Id)
-        <fieldset>
+           <fieldset>
+                <div class="display-label">
 
-            <div class="display-label">
+                    <p><b>@Html.DisplayNameFor(model => model.Id):</b> @Html.DisplayFor(model => model.Id)</p>
 
-                @Html.DisplayNameFor(model => model.Fecha)
-
-            </div>
-            <div class="display-text">
-
-                @Html.DisplayFor(model => model.Fecha)
-
-            </div>
+                </div>
 
 
-            <div class="display-label">
 
-                @Html.DisplayNameFor(model => model.Destino)
+                <div class="display-label">
 
-            </div>
-            <div class="display-text">
+                    <p><b>@Html.DisplayNameFor(model => model.Fecha):</b> @Html.DisplayFor(model => model.Fecha)</p>
 
-                @Html.DisplayFor(model => model.Destino)
+                </div>
 
-            </div>
 
-            <div class="display-label">
 
-                @Html.DisplayNameFor(model => model.Origen)
+                <div class="display-label">
 
-            </div>
-            <div class="display-text">
+                    <p><b>@Html.DisplayNameFor(model => model.Destino):</b> @Html.DisplayFor(model => model.Destino)</p>
 
-                @Html.DisplayFor(model => model.Origen)
+                </div>
 
-            </div>
 
-            <div class="display-label">
 
-                @Html.DisplayNameFor(model => model.Matricula)
+                <div class="display-label">
 
-            </div>
-            <div class="display-text">
+                    <p><b>@Html.DisplayNameFor(model => model.Origen):</b> @Html.DisplayFor(model => model.Origen)</p>
 
-                @Html.DisplayFor(model => model.Matricula)
+                </div>
+                <div class="display-text">
 
-            </div>
-        </fieldset>
+                    <p><b>@Html.DisplayNameFor(model => model.Matricula):</b> @Html.DisplayFor(model => model.Matricula)</p>
+
+                </div>
+
+           </fieldset>
+
+        <input type="submit" value="Si" />
 
     }
 
-    <p>
-
-        <input type="submit" value="Si" />
-    </p>
+    
 
     <p>
         @Html.ActionLink("Volver a Index", "Index", "Vuelo")

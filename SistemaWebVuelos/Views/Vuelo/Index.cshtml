@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<SistemaWebVuelos.Models.Vuelo>
-
+<link href="~/Content/Main.css" rel="stylesheet" />
 
 @using (Html.BeginForm("BuscarPorDestino", "Vuelo", FormMethod.Get))
 {
-    <h3>BUscar por Destino:</h3>
+    <h3>Buscar por Destino:</h3>
     @Html.TextBox("Destino", null)
     <input type="submit" value="Buscar" />
 }
@@ -39,6 +39,9 @@
 
 @section SideBarIzquierda
 {
-    <h3>Seccion Opcional</h3>
+    <h2>Aviones</h2>
+    <img src="~/Images/index1.jpg" />
+    <img src="~/Images/interior.jpg" />
+
 }
 
