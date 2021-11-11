@@ -8,49 +8,50 @@
     <link href="~/Content/Main.css" rel="stylesheet" />
 </head>
 <body>
-    <fieldset>
-        <legend>
+    <div class="detailbody">
+        <fieldset>
+            <legend>
 
-            <b>Flight Detail</b> 
+                <b>Flight Detail</b>
 
-        </legend>
+            </legend>
 
-        <div class="display-label">
+            <div class="display-label">
 
-            <p><b>@Html.DisplayNameFor(model => model.Id):</b> @Html.DisplayFor(model => model.Id)</p> 
+                <p><b>@Html.DisplayNameFor(model => model.Id):</b> @Html.DisplayFor(model => model.Id)</p>
 
-        </div>
-       
-
-        <div class="display-label">
-
-            <p><b>@Html.DisplayNameFor(model => model.Fecha):</b> @Html.DisplayFor(model => model.Fecha)</p>
-
-        </div>
-       
-
-        <div class="display-label">
-
-            <p><b>@Html.DisplayNameFor(model => model.Destino):</b> @Html.DisplayFor(model => model.Destino)</p>
-
-        </div>
-       
+            </div>
 
 
-        <div class="display-label">
+            <div class="display-label">
 
-            <p><b>@Html.DisplayNameFor(model => model.Origen):</b> @Html.DisplayFor(model => model.Origen)</p>
+                <p><b>@Html.DisplayNameFor(model => model.Fecha):</b> @Html.DisplayFor(model => model.Fecha)</p>
 
-        </div>
-        <div class="display-text">
-
-            <p><b>@Html.DisplayNameFor(model => model.Matricula):</b> @Html.DisplayFor(model => model.Matricula)</p>
-
-        </div>
+            </div>
 
 
-    </fieldset>
+            <div class="display-label">
 
+                <p><b>@Html.DisplayNameFor(model => model.Destino):</b> @Html.DisplayFor(model => model.Destino)</p>
+
+            </div>
+
+
+
+            <div class="display-label">
+
+                <p><b>@Html.DisplayNameFor(model => model.Origen):</b> @Html.DisplayFor(model => model.Origen)</p>
+
+            </div>
+            <div class="display-text">
+
+                <p><b>@Html.DisplayNameFor(model => model.Matricula):</b> @Html.DisplayFor(model => model.Matricula)</p>
+
+            </div>
+
+
+        </fieldset>
+    </div>
     <p>
 
         @Html.ActionLink("Volver a Index", "Index", "Vuelo")
